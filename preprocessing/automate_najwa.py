@@ -99,7 +99,7 @@ def preprocess_data(
 if __name__ == "__main__":
     import pandas as pd
     os.makedirs("preprocessing", exist_ok=True)
-    os.makedirs("telco_churn_preprocessing", exist_ok=True)
+    os.makedirs("preprocessing/telco_churn_preprocessing", exist_ok=True)
 
     RAW_PATH = "telco_churn_raw/data_raw.csv"
 
@@ -118,6 +118,7 @@ if __name__ == "__main__":
     pd.DataFrame(X_test).to_csv("telco_churn_preprocessing/X_test.csv",index=False)
     y_train.to_csv("telco_churn_preprocessing/y_train.csv",index=False)
     y_test.to_csv("telco_churn_preprocessing/y_test.csv",index=False)
+
 
 
 
