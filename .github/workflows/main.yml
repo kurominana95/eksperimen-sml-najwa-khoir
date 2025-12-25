@@ -1,4 +1,6 @@
 name: Automated Preprocessing Pipeline
+permissions:
+  contents: write
 
 on:
   push:
@@ -13,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
