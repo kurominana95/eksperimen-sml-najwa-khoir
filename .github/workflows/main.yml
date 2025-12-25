@@ -34,6 +34,13 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add preprocessing/telco_churn_preprocessing preprocessing/preprocessor.joblib preprocessing/header.csv
-          git commit -m "Auto update preprocessing output" || echo "No changes"
-          git push
+
+          git add preprocessing/
+          git add telco_churn_preprocessing/
+
+          git status
+
+          git commit -m "Auto update preprocessing output" || echo "No changes to commit"
+
+          git pull origin main --rebase
+          git push origin main
