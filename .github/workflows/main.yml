@@ -36,7 +36,7 @@ jobs:
           git config user.email "github-actions@github.com"
 
           git add preprocessing/
-          git add telco_churn_preprocessing/
+          git add preprocessing/telco_churn_preprocessing/
 
           git status
 
