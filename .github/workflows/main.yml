@@ -1,11 +1,11 @@
 name: Automated Preprocessing Pipeline
+
 permissions:
   contents: write
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,12 +28,12 @@ jobs:
 
       - name: Run preprocessing
         run: |
-          python automate.py
+          python preprocessing/automate_najwa.py
 
       - name: Commit preprocessing output
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add telco_churn_preprocessing preprocessing
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add preprocessing/telco_churn_preprocessing preprocessing/preprocessor.joblib preprocessing/header.csv
           git commit -m "Auto update preprocessing output" || echo "No changes"
           git push
