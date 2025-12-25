@@ -114,10 +114,11 @@ if __name__ == "__main__":
 
     # simpan dataset hasil preprocessing
 
-    pd.DataFrame(X_train).to_csv("telco_churn_preprocessing/X_train.csv",index=False)
-    pd.DataFrame(X_test).to_csv("telco_churn_preprocessing/X_test.csv",index=False)
-    y_train.to_csv("telco_churn_preprocessing/y_train.csv",index=False)
-    y_test.to_csv("telco_churn_preprocessing/y_test.csv",index=False)
+    pd.DataFrame(X_train).to_csv("preprocessing/telco_churn_preprocessing/X_train.csv",index=False)
+    pd.DataFrame(X_test).to_csv("preprocessing/telco_churn_preprocessing/X_test.csv",index=False)
+    y_train.to_csv("preprocessing/telco_churn_preprocessing/y_train.csv",index=False)
+    y_test.to_csv("preprocessing/telco_churn_preprocessing/y_test.csv",index=False)
+
 
 
 
